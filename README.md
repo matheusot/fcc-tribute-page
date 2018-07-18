@@ -1,4 +1,4 @@
-#Steve Jobs Tribute Page
+# Steve Jobs Tribute Page
 A tribute page for [freeCodeCamp](https://www.freecodecamp.org/)'s Responsive Web Design Certification
 
 ## Built With
