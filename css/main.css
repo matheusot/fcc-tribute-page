@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+:root {
+    --bg-primary: #FFFCF0;
+    --bg-secundary: #0C2733;
+    --text-primary: #1C1A21;
+    --text-invered: #FFFCF0;
+    --text-secundary: #053138;
+    --heart: red;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-primary);
+    font-size: 1.1em;
+    line-height: 1.5rem;
+}
+
+#main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "header header header" "image image image" "content content content" "footer footer footer";
+}
+
+h3,
+p,
+#img-caption,
+.see-more {
+    color: var(--text-primary);
+}
+
+h1,
+h2,
+footer {
+    color: var(--text-invered);
+}
+
+header {
+    grid-area: header;
+    text-align: center;
+    background-color: var(--bg-secundary);
+}
+
+#img-div {
+    padding: 0px 20px;
+    margin-top: 20px;
+    grid-area: image;
+    text-align: center;
+}
+
+#img-div img {
+    display: block;
+    margin: auto;
+    height: auto;
+    width: 100%;
+    border-radius: 10px;
+}
+
+#img-caption {
+    font-size: 0.8em;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+section {
+    margin: 5px 0px 5px 0px;
+    display: grid;
+    grid-template-columns: auto 11fr;
+    grid-gap: 20px;
+    align-items: center;
+    grid-template-areas: "date content";
+}
+
+.date {
+    text-align: center;
+    grid-area: date;
+    font-weight: bold;
+    color: var(--text-secundary);
+    display: grid;
+    font-size: 0.8em;
+}
+
+.month, .day {
+    border-bottom: 1px dashed var(--text-secundary);
+}
+
+p {
+    grid-area: content;
+    text-align: justify;
+}
+
+#tribute-info {
+    padding: 0 20px;
+    grid-area: content;
+}
+
+.see-more {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+footer {
+    padding: 10px;
+    margin-top: 30px;
+    grid-area: footer;
+    text-align: center;
+    background-color: var(--bg-secundary);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.4s;
+}
+
+a:hover {
+    color: var(--text-secundary);
+    opacity: 0.7;
+}
+
+footer a:hover {
+    color: var(--heart);
+}
+
+.heart {
+    position: absolute;
+    margin-left: -20px;
+    color: var(--heart);
+    transform: scale(1);
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+    0% {
+        font-size: inherit;
+        margin-left: -17px;
+    }
+    50% {
+        font-size: 1.5em;
+        margin-left: -20px;
+    }
+    100% {
+        font-size: inherit;
+        margin-left: -17px;
+    }
+}
+
+@media (min-width: 800px) {
+    #tribute-info {
+        padding: 0px 25vw;
+    }
+
+    #img-div img {
+        max-width: 40vw;
+    }
+}
